@@ -12,7 +12,7 @@
 // Function to simulate smoke amount measurement
 float measureSmokeAmount() {
     // (replace with actual smoke sensor)
-    float smokeAmount = 4.5;
+    float smokeAmount = (std::rand()%10)+1;
 
     return smokeAmount;
 }
