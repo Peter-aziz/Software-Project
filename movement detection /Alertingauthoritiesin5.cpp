@@ -26,7 +26,7 @@ void checkMovement() {
         std::thread t1([&]() {
        std::cin >> userresponse;
        });
-   std::this_thread::sleep_for(std::chrono::seconds(300));
+   std::this_thread::sleep_for(std::chrono::seconds(10));
    t1.detach();
         if (userresponse == "yes" || userresponse == "YES" || userresponse == "Yes" ) {
             AlertAuthorities();
@@ -35,7 +35,7 @@ void checkMovement() {
         else if (userresponse == "no" || userresponse == "NO" || userresponse == "No" ){
             return;
         }
-   
+   std::this_thread::sleep_for(std::chrono::seconds(300));
         if (!didUserRespond) {
             std::cout << "User didn't respond. Alerting authorities..." << std::endl;
             AlertAuthorities();
