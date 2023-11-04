@@ -22,12 +22,16 @@ void signupwindow::on_pushButton_signup_clicked()
     QString password = ui-> lineEdit_PasswordSignup->text();
     QString deviceCode = ui-> lineEdit_DeviceCodeSignup->text();
 
-    QFile file("F:/software/milestone_11_qt/data.txt");
+    QFile file("F:/software/Software-Project/milestone_11_qt/data.txt");
     QTextStream out(&file);
 
+    // checks if device code entered is correct and if user entered a valid username and password i.e. not empty it adds them to the file
     if (deviceCode == "1111" && username != "" && password != ""){
         //create a new user
-        if (file.open(QIODevice::ReadWrite | QIODevice::Append)) {
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Append)) {
+            qDebug() << "data file can't be opened...";
+            return;
+        } else {
             out << "\n" << username << "," << password ;
         }
         file.close();

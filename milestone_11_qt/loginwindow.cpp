@@ -2,7 +2,8 @@
 #include "ui_loginwindow.h"
 #include <QMessageBox>
 #include <QFile>
-#include <vector>
+#include <QTextStream>
+#include <QDebug>
 
 loginWindow::loginWindow(QWidget *parent) :
     QDialog(parent),
@@ -16,37 +17,38 @@ loginWindow::~loginWindow()
     delete ui;
 }
 
-static void process_line(const QByteArray &)
-{
-}
+bool checkIfQStringIsInFile(const QString& qString, const QString& fileName) {
+  QFile file(fileName);
+  if (!file.open(QIODevice::ReadOnly)) {
+    return false;
+  }
+  QTextStream stream(&file);
 
-static void process_line(const QString &)
-{
+  QString nextLine;
+  while (!stream.atEnd()) {
+    nextLine = stream.readLine();
+
+    if (nextLine == qString) {
+      return true;
+    }
+  }
+
+  // The QString is not in the file.
+  return false;
 }
 
 void loginWindow::on_pushButton_Login_clicked()
 {
     QString username = ui-> lineEdit_UsernameLogin->text();
     QString password = ui-> lineEdit_PasswordLogin->text();
+    QString full_data = username + "," + password;
+    QString filename = "F:/software/Software-Project/milestone_11_qt/data.txt";
 
-    vector <string> passwords;
+    if (checkIfQStringIsInFile(full_data,filename)){
+        QMessageBox::information(this, "login", "logged in succesfully");
+    }
+    else
+        QMessageBox::warning(this, "login", "wrong username or password");
 
-    QFile input_file("F:/software/milestone_11_qt/data.txt");
-
-    QTextStream in(&input_file);
-    QString line = in.readLine();
-    while (!line.isNull()) {
-            process_line(line);
-            line = in.readLine();
-        }
 }
-/*
-    if (username== "admin" && password == "admin"){
-        QMessageBox::information(this, "Login", "Username and password are correct");
-    }
-    else{
-        QMessageBox::warning(this, "Login", "Username or password are not correct. Try again");
-    }
-*/
-
 
