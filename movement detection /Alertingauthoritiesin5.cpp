@@ -4,12 +4,10 @@
 #include <thread>
 
 void AlertPhone() {
-    // Code to send alert message to phone
     std::cout << "Movement has been detected. Alert the authorities? Reply 'yes' or 'no' " << std::endl;
 }
 
 void AlertAuthorities() {
-    // Code to alert authorities
     std::cout << "Authorities have been alerted!" << std::endl;
 }
 
@@ -18,8 +16,7 @@ bool randomBool() {
 }
 
 void checkMovement() {
-    // Code to check movement from proximity sensors
-    bool isthereMovementDetected = randomBool(); // Replace with actual code to check movement
+    bool isthereMovementDetected = randomBool(); 
 
     if (isthereMovementDetected) {
       
