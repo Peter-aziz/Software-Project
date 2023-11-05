@@ -18,7 +18,6 @@ bool heaterMode (float externalTemperature)
 
 int main() 
 {
-    srand(time(0));
     float externalTemperature = rand () % 55;
     if (heaterMode(externalTemperature))
         cout<<"Heater Mode activated (40 degrees Celsius)";
