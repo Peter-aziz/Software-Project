@@ -24,7 +24,7 @@ public:
     }
 };
 
-class LightSwitch {
+class Lights {
 private:
     std::vector<Light> lights;
 public:
@@ -69,7 +69,7 @@ public:
 };
 
 int main() {
-    LightSwitch lightSwitch;
+    Lights Lights;
     std::cout << "Welcome to the light switch simulator!" << std::endl;
     int choice;
     do {
@@ -88,33 +88,33 @@ int main() {
         std::cin >> choice;
         switch (choice) {
             case 1:
-                lightSwitch.switchOnAllLights();
+                Lights.switchOnAllLights();
                 break;
             case 2:
-                lightSwitch.switchOffAllLights();
+                Lights.switchOffAllLights();
                 break;
             case 3: {
                 int lightIndex;
                 std::cout << "Enter the index of the light to switch on: ";
                 std::cin >> lightIndex;
-                lightSwitch.switchOnLight(lightIndex);
+                Lights.switchOnLight(lightIndex);
                 break;
             }
             case 4: {
                 int lightIndex;
                 std::cout << "Enter the index of the light to switch off: ";
                 std::cin >> lightIndex;
-                lightSwitch.switchOffLight(lightIndex);
+                Lights.switchOffLight(lightIndex);
                 break;
             }
             case 5:
-                lightSwitch.addLight();
+                Lights.addLight();
                 break;
             case 6: {
                 int lightIndex;
                 std::cout << "Enter the index of the light to remove: ";
                 std::cin >> lightIndex;
-                lightSwitch.removeLight(lightIndex);
+                Lights.removeLight(lightIndex);
                 break;
             }
             case 7:
