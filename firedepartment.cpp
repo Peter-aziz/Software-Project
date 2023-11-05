@@ -15,10 +15,10 @@ int main() {
 	string response;
 	cout << "respond with 2 minutes" << endl;
 
-
+	this_thread::sleep_for(seconds);
 	auto start = chrono::steady_clock::now();
 	while (true) {
-		this_thread::sleep_for(seconds);
+	
 		if (chrono::steady_clock::now() - start == chrono::seconds(seconds)) {
 
 
