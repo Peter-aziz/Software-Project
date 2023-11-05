@@ -6,8 +6,7 @@ using namespace std;
 double internalTemp;
 
 bool heaterMode (float externalTemperature)
-{
-    
+{ 
     if (externalTemperature < 10)
     {
         internalTemp = 40;
@@ -19,10 +18,10 @@ bool heaterMode (float externalTemperature)
 
 int main() 
 {
-	srand(time(0));
-	float externalTemperature = rand () % 55;
-	if (external)
-		cout<<"Heater Mode activated (40 degrees Celsius)";
-	else
-		cout<<"Current temperature is " << internalTemp;
+    srand(time(0));
+    float externalTemperature = rand () % 55;
+    if (heaterMode(externalTemperature))
+        cout<<"Heater Mode activated (40 degrees Celsius)";
+    else
+        cout<<"Current temperature is " << internalTemp;
 }
