@@ -13,7 +13,6 @@ int percentageWindowBlindIsOpen (float solarIrradiance)
 
 int main()
 {
-	srand(time(0));
 	float solarIrradiance = rand () % 2000;
 	int windowBlindsOpen = percentageWindowBlindIsOpen (solarIrradiance);
 	cout<<"Current Solar Irradiance is: " << solarIrradiance<<", automatically opening/closing the blinds " << windowBlindsOpen<<"%";
