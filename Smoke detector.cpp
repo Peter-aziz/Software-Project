@@ -4,11 +4,6 @@
 
 int measurementTime;
 
-void setMeasurementTime()
-{
-    cout<<”How many seconds upon smoke detection would you like the system to await your response before automatically altering the fire department? ”;
-    cin>>measurementTime;
-}
 
 // Function to simulate smoke amount measurement
 float measureSmokeAmount() {
@@ -19,8 +14,9 @@ float measureSmokeAmount() {
 }
 
 int main() {
-
+    measurementTime = 30;
     while (true) {
+        
         // Measure smoke amount
         float smokeAmount = measureSmokeAmount();
         
