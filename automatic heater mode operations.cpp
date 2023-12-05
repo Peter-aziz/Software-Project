@@ -13,8 +13,8 @@ int get_lower_temp(){
     cin >> low_temp;
     } else{
     got_low = true;
-    return low_temp;
     }
+    return low_temp;
 }
 
 int get_upper_temp(int low_temp){
@@ -29,8 +29,9 @@ int get_upper_temp(int low_temp){
     cin >> high_temp;
     } else {
     got_high = true;
-    return high_temp;
     }
+    
+    return high_temp;
 }
 
 int auto_set_temp(int lower_limit, int upper_limit, int current_temp){
