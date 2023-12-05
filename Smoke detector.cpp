@@ -1,13 +1,14 @@
-//
-//  main.cpp
-//  Software project
-//
-//  Created by Mariam Maged Mohamed Bahgat  on 02/11/2023.
-//
-
 #include <iostream>
 #include <chrono>
 #include <thread>
+
+int measurementTime;
+
+void setMeasurementTime()
+{
+    cout<<”How many seconds upon smoke detection would you like the system to await your response before automatically altering the fire department? ”;
+    cin>>measurementTime;
+}
 
 // Function to simulate smoke amount measurement
 float measureSmokeAmount() {
@@ -18,7 +19,6 @@ float measureSmokeAmount() {
 }
 
 int main() {
-    int measurementTime = 30; // 30 seconds 
 
     while (true) {
         // Measure smoke amount
@@ -40,4 +40,3 @@ int main() {
 
     return 0;
 }
-
