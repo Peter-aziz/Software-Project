@@ -18,7 +18,7 @@ float measureSmokeAmount() {
 }
 
 int main() {
-    int measurementTime = 120; // Two minutes (in seconds)
+    int measurementTime = 30; // 30 seconds 
 
     while (true) {
         // Measure smoke amount
