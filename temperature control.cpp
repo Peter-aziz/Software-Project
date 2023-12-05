@@ -1,29 +1,33 @@
 #include <iostream>
 #include <cstdlib>
-
+#include <ctime>
 using namespace std;
 
-int temperatureadjustment(int internaltemperature) {
-    int temperaturemax = 35;
-    int tempadjustment = 25;
-    if (internaltemperature >= temperaturemax)
+int temperatureAdjustment(int externalTemperature) {
+    cout<<"Please choose the external temperature above which you'd like to change the AC settings: "; 
+    int temperaturemax;
+    cin>>temperaturemax;
+    
+    cout<<endl<<"Now enter the temperature you'd like to set the AC to: ";
+    int tempAdjustment;
+    cin>>tempAdjustment;
+    
+    if (externalTemperature >= temperaturemax)
     {
         cout << "temperature exceed the max" << endl;
-        cout << "temperature adjusted to" << "  " << tempadjustment;
+        cout << "temperature adjusted to" << "  " << tempAdjustment;
     }
 
     else
 
         cout << "temperature below max,no action";
 
-    return tempadjustment;
+    return tempAdjustment;
 
 }
 int main() {
     
-    int internaltemp = rand() % 45;
-    cout << "internal temp=" << internaltemp;
-    temperatureadjustment(internaltemp);
-
-
+    int externaltemp = rand() % 45;
+    cout << "External temp=" << externaltemp;
+    temperatureAdjustment(externaltemp);
 }
