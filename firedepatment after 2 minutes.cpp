@@ -21,7 +21,7 @@ int main() {
     
 
     string response;
-    cout << "put your response within 2 minutes"<<endl;
+    cout << "put your response within 1 minute"<<endl;
     cin >> response;
 
 
@@ -40,7 +40,7 @@ string x= firedepartmntalarm(response);
     return 0;
 
 
-    this_thread::sleep_for(chrono::seconds(10));
+    this_thread::sleep_for(chrono::seconds(60));
 
     
 
